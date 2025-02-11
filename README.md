@@ -29,3 +29,10 @@ docker run --name my-database -e MYSQL_ROOT_PASSWORD=123456 \
 # References
 
 - [JSON](https://www.w3schools.com/js/js_json.asp)
+- [PROMISES](https://www.w3schools.com/js/js_promise.asp)
+
+
+
+BREAK 15 min
+check your code 
+check if everything is running

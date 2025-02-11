@@ -27,6 +27,12 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "API is runing" });
 });
 
+// promise
+//  assyncronous  => async
+// you need wait => await 
+
+
+
 // POST create / save in database
 app.post("/message", async (req, res) => {
   const { name, email, message } = req.body;
@@ -48,7 +54,7 @@ app.post("/message", async (req, res) => {
 });
 
 // GET, list the messages; we can use the same route becasue they are differents protocols
-app.get("/message", async () => {
+app.get("/message", async (req, res) => {
   try {
     const conn = await mysql.createConnection(dbConfig);
     const [rows] = await conn.execute("SELECT * FROM messages"); // an object { ..., rows: [{..}]}
