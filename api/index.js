@@ -3,8 +3,11 @@
 // Declare the libraries
 const express = require("express"); // minimalist framework
 const mysql = require("mysql2/promise"); // mysql database library
+const cors = require('cors');
 
 const app = express();
+app.use(cors()); // my middleware
+
 const port = 3000;
 
 const dbConfig = {
@@ -34,13 +37,13 @@ app.post("/message", async (req, res) => {
 
   try {
     const conn = await mysql.createConnection(dbConfig);
-    const query = "INSERT INTO users (name, email, message) VALUES (?, ?, ?)";
+    const query = "INSERT INTO messages (name, email, message) VALUES (?, ?, ?)";
     await conn.execute(query, [name, email, message]);
     await conn.end();
 
     res.status(201).json({ message: "Created with success" });
   } catch (e) {
-    res.status(500), json({ error: `Something happens in the server: ${e}` });
+    res.status(500).json({ error: `Something happens in the server: ${e}` });
   }
 });
 

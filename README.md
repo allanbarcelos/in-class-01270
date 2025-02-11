@@ -25,3 +25,7 @@ docker run --name my-database -e MYSQL_ROOT_PASSWORD=123456 \
     3.2) create the list page
     3.3) fix the API communication issue
 4) collaboration (1h)
+
+# References
+
+- [JSON](https://www.w3schools.com/js/js_json.asp)

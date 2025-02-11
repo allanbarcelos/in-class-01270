@@ -7,6 +7,8 @@ module.exports = {
     entry: {
       main: './scripts/main.js',
       contact: './scripts/contact.js',
+      list: './scripts/list.js',
+
     },
 
     output: {
@@ -45,6 +47,11 @@ module.exports = {
         template: './contact.html',
         chunks: ['contact'],
         filename: 'contact.html',
+      }),
+      new HtmlWebpackPlugin({
+        template: './list.html',
+        chunks: ['list'],
+        filename: 'list.html',
       }),
     ],
 
